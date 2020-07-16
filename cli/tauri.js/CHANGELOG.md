@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.10.0]
+
+-   The notification's `body` is now optional, closes #793.
+    -   [dac1db3](https://www.github.com/tauri-apps/tauri/commit/dac1db39831ecbcf23c630351d5753af01ccd500) fix(tauri) notification body optional, requestPermission() regression, closes [#793](https://www.github.com/tauri-apps/tauri/pull/793) ([#844](https://www.github.com/tauri-apps/tauri/pull/844)) on 2020-07-16
+-   Prevent running the `dev` pipeline when running with administrator privileges.
+    -   [1780057](https://www.github.com/tauri-apps/tauri/commit/17800571fe417b5250aa1bd7052340a1c93918a8) fix(tauri.js) exit dev when running as admin, fixes [#781](https://www.github.com/tauri-apps/tauri/pull/781) ([#839](https://www.github.com/tauri-apps/tauri/pull/839)) on 2020-07-15
+-   Print outdated dependencies information on `tauri info`.
+    -   [f0ce94f](https://www.github.com/tauri-apps/tauri/commit/f0ce94fc8e38642f2ba479311370dc1ca54799c7) feat(tauri.js) print outdated deps information on `tauri info` ([#841](https://www.github.com/tauri-apps/tauri/pull/841)) on 2020-07-15
+-   Adds a dependency manager command to the Node.js CLI (`tauri deps`). The manager is able to install and update Rust and the Tauri ecosystem dependencies (npm package, crates, cargo subcommands).
+    Usage: `tauri deps install` and `tauri deps update`.
+        - [77282c1](https://www.github.com/tauri-apps/tauri/commit/77282c1e513227fe379f916cd21249b44faa8756) feat(tauri.js) add dependency manager command ([#829](https://www.github.com/tauri-apps/tauri/pull/829)) on 2020-07-15
+-   Run the dependency manager's install script after `tauri init` succeeds.
+    -   [0591f1f](https://www.github.com/tauri-apps/tauri/commit/0591f1f945420ec4bc53919d05a8f8de014b3823) feat(tauri.js) run `deps install` after `tauri init` ([#842](https://www.github.com/tauri-apps/tauri/pull/842)) on 2020-07-15
+-   Move types exported in the `tauri` js api into the modules that use them. For
+    example, `Event` is now available from `tauri/api/event` instead of
+    `tauri/api/types/event`.
+        - [660a2d8](https://www.github.com/tauri-apps/tauri/commit/660a2d87d6acf0abf6be70c01e6402cb5aba96c7) feat(tauri.js) move exported api types into api modules (fix [#807](https://www.github.com/tauri-apps/tauri/pull/807)) ([#809](https://www.github.com/tauri-apps/tauri/pull/809)) on 2020-07-12
+
 ## [0.9.1]
 
 -   Fixes Edge blank screen on Windows when running tauri dev (Tauri crashing window due to Edge reloading app because of missing Content-Type header).
